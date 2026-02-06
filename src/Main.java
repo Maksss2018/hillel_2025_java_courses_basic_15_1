@@ -1,3 +1,6 @@
 void main() {
-   IO.println(String.format("Hello and welcome!"));
+    AdvisorImpl advisor = new AdvisorImpl();
+    for (Day day : Day.values()) {
+        IO.println(advisor.advise(day));
+    }
 }
