@@ -1,12 +1,17 @@
 void main() {
     AdvisorImpl advisor = new AdvisorImpl();
-    Calendar c = Calendar.getInstance();
-    int indexOfDayWeek = c.get(Calendar.DAY_OF_WEEK) - 1;
-    Day today = Day.values()[indexOfDayWeek];
+    Day today = getIndexOfCurrentDay();
+
     IO.println(advisor.advise(today));
     /*
     for (Day day : Day.values()) {
         IO.println(advisor.advise(day));
     }
     */
+}
+Day getIndexOfCurrentDay() {
+    LocalDate localDate = LocalDate.now();
+    DayOfWeek dayOfWeekEnum = localDate.getDayOfWeek();
+    int indexOfDayWeek = dayOfWeekEnum.getValue()-1;
+    return Day.values()[indexOfDayWeek];
 }
