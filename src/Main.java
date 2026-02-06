@@ -1,8 +1,8 @@
 void main() {
     AdvisorImpl advisor = new AdvisorImpl();
     Calendar c = Calendar.getInstance();
-    int dayOfWeek = c.get(Calendar.DAY_OF_WEEK) - 1;
-    Day today = Day.values()[dayOfWeek];
+    int indexOfDayWeek = c.get(Calendar.DAY_OF_WEEK) - 1;
+    Day today = Day.values()[indexOfDayWeek];
     IO.println(advisor.advise(today));
     /*
     for (Day day : Day.values()) {
